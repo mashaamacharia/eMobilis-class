@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>flex</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .outer{
+        display: flex;
+        background-color:#333;
+        padding-top:15px ;
+        padding-bottom:15px ;
+        height: 300px;
+        justify-content: center;  /*center content horizontally*/
+    }
+    .inner{
+        background-color: antiquewhite;
+        width: 40%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding: 10px;
+    }
+    .inner p {
+        color: black;
+    }
+#shout{
+    color:red;
+}
+        .container{
+            display: flex;
+            justify-content: space-between;
+           background-color: burlywood;
+            padding: 25px;
+        }
+        .smaller{
+            width: 20%;
+            height: 60px;
+            background-color: #333333;
+            color: white;
+            font-size: 2.3em;
+            display: flex;
+            justify-content: center; /*horizontally*/
+            align-items: center; /*vertical*/
+        }
+    }
+</style>
+<body>
+  <div class="outer">
+      <div class="inner">
+          <p><span id="shout">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span> Cumque doloribus eum molestias obcaecati, officia optio qui repudiandae tempora. Adipisci aspernatur cupiditate dignissimos, et labore quam quisquam reprehenderit tempore ullam ut?<span>Atque culpa et facilis ipsam itaque provident suscipit velit. Amet animi commodi deserunt dolor doloribus eius eum, fugit maiores nam neque nesciunt nostrum pariatur porro praesentium quod rem sapiente! Omnis!</span></p>
+      </div>
+  </div>
+<div class="container">
+    <div class="smaller">
+        1
+    </div>
+    <div class="smaller">
+       2
+    </div>
+    <div class="smaller">
+        3
+    </div>
+    <div class="smaller">
+        4
+    </div>
+
+</div>
+</body>
+</html>
