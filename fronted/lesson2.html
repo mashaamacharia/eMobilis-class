@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap components</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar bg-body-tertiary fixed-top te">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container ">
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque deleniti dignissimos distinctio, eius eligendi facere laudantium nam obcaecati odit praesentium provident quaerat quisquam repellendus repudiandae saepe vel, veritatis! Ipsa?</span><span>A, ad aliquam assumenda cum cupiditate, distinctio est et ex excepturi fuga fugit impedit magni, maxime minima nisi odio odit omnis qui recusandae repellendus reprehenderit repudiandae rerum sed sunt unde?</span><span>Ab assumenda aut culpa dicta doloremque dolores ducimus et fugit illum, inventore, iusto, minus mollitia nostrum obcaecati provident quibusdam reiciendis sapiente soluta unde ut? Ab dolor error facere molestiae suscipit.</span><span>Dicta, harum, quos. Adipisci alias atque dicta, iusto non omnis quod reiciendis voluptatem! Accusamus amet distinctio ex, fugiat iure libero nihil officia placeat quia recusandae repudiandae sit sunt suscipit tempore.</span><span>Ab eaque enim, excepturi expedita quam quod quos? Alias cum debitis dolorem eaque error fuga fugit harum in iusto magni nihil, pariatur perspiciatis placeat, ratione repellat repellendus repudiandae tempora tempore.</span>
+    </p>
+    <div class="row">
+        <div class="col-sm-6 bg-body-secondary">
+            <p class="text-center "><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis consequatur eaque enim est et magni provident quam quia sit! Cupiditate delectus dicta modi perferendis quibusdam tempora. Delectus eius, veniam.</span><span>Alias animi assumenda corporis cumque deserunt, dolore dolorem eos est exercitationem explicabo labore laudantium natus nisi nostrum obcaecati odit possimus quaerat quibusdam sunt ullam! Corporis doloribus perferendis quidem reiciendis voluptas!</span>
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p class="text-center"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque autem, blanditiis culpa cumque dignissimos est eum excepturi facilis fugiat maiores, repudiandae sit tempore tenetur totam ut vero voluptate voluptates.</span><span>Assumenda atque cumque doloremque eum ex facilis fuga impedit inventore ipsam itaque minima, molestias necessitatibus, nihil officiis qui quisquam quo repellat tempora temporibus ullam? Alias deserunt dolorum magni molestiae rerum!</span>
+            </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-8 bg-danger mx-auto">
+            <p class="text-black text-center"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam illum nam nostrum placeat praesentium tenetur voluptatibus voluptatum. Aliquid, amet, eius enim exercitationem hic iste labore natus necessitatibus placeat quos reprehenderit?</span><span>Architecto at dolorem dolorum ea esse eveniet illum ipsum laboriosam perspiciatis reiciendis! Aut consequatur eius esse, magnam maiores maxime omnis perferendis placeat quo rem repellat sapiente temporibus, voluptas voluptate voluptatum.</span><span>A ad aliquam, assumenda consequuntur debitis delectus eaque eos est eveniet facere natus, optio placeat quibusdam recusandae rem sint soluta suscipit tempora? Atque non provident ratione repellendus sint. Pariatur, sint.</span>
+            </p>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 mx-auto">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body ">
+                                <strong>This is the first item's accordion body.</strong> It is shown by default, until
+                                the collapse plugin adds the appropriate classes that we use to style each element.
+                                These classes control the overall appearance, as well as the showing and hiding via CSS
+                                transitions. You can modify any of this with custom CSS or overriding our default
+                                variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                until the collapse plugin adds the appropriate classes that we use to style each
+                                element. These classes control the overall appearance, as well as the showing and hiding
+                                via CSS transitions. You can modify any of this with custom CSS or overriding our
+                                default variables. It's also worth noting that just about any HTML can go within the
+                                <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until
+                                the collapse plugin adds the appropriate classes that we use to style each element.
+                                These classes control the overall appearance, as well as the showing and hiding via CSS
+                                transitions. You can modify any of this with custom CSS or overriding our default
+                                variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
