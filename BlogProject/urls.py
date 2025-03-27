@@ -29,4 +29,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile_view, name='profile'),
     path('post/create/', views.create_post_view, name='create_post'),
+    path('post/<int:post_id>/', views.post_detail_view, name='post_detail'),
+    path('post/<int:post_id>/edit/', views.edit_post_view, name='edit_post'),
+    path('post/<int:post_id>/delete/', views.delete_post_view, name='delete_post'),
 ]
