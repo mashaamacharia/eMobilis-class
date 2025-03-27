@@ -1,5 +1,7 @@
+from django.contrib import messages
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -67,8 +69,17 @@ def profile_view(request):
 
 
 def home_view(request):
-    posts = Post.objects.order_by('-created_at')
-    return render(request, 'home.html', {'posts': posts})
+    # Improved home view with pagination
+    posts_list = Post.objects.order_by('-created_at')
+    paginator = Paginator(posts_list, 5)  # Show 5 posts per page
+
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
+
+    return render(request, 'home.html', {
+        'posts': posts,
+        'paginator': paginator
+    })
 
 
 class PostForm(forms.ModelForm):
@@ -92,3 +103,50 @@ def create_post_view(request):
     else:
         form = PostForm()
     return render(request, 'create_post.html', {'form': form})
+
+
+def post_detail_view(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, 'post_detail.html', {'post': post})
+
+
+def edit_post_view(request, post_id):
+    # Get the post or return 404 if not found
+    post = get_object_or_404(Post, id=post_id)
+
+    # Check if the current user is the author
+    if request.user != post.author:
+        messages.error(request, "You do not have permission to edit this post.")
+        return redirect('home')
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Post updated successfully!")
+            return redirect('post_detail', post_id=post.id)
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'edit_post.html', {
+        'form': form,
+        'post': post
+    })
+
+
+@login_required
+def delete_post_view(request, post_id):
+    # Get the post or return 404 if not found
+    post = get_object_or_404(Post, id=post_id)
+
+    # Check if the current user is the author
+    if request.user != post.author:
+        messages.error(request, "You do not have permission to delete this post.")
+        return redirect('home')
+
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, "Post deleted successfully!")
+        return redirect('home')
+
+    return render(request, 'delete_post.html', {'post': post})
